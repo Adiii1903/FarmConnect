@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmConnect | Register</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>🌾 FarmConnect</h1>
+        <p>Create your account</p>
+    </header>
+
+    <main>
+        <div class="container">
+            <h2>Register</h2>
+            <form action="#" method="post">
+                <label for="role">I am a:</label>
+                <select id="role" name="role" required>
+                    <option value="farmer">Farmer</option>
+                    <option value="worker">Worker</option>
+                </select>
+
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required>
+
+                <div id="worker-fields" style="display:none;">
+                    <label for="skills">Skills:</label>
+                    <input type="text" id="skills" name="skills" placeholder="E.g., Harvesting, Irrigation">
+
+                    <label for="rate">Daily Rate (₹):</label>
+                    <input type="number" id="rate" name="rate" placeholder="Enter your rate">
+                </div>
+
+                <button type="submit" class="btn">Register</button>
+            </form>
+
+            <p>Already have an account? <a href="login.html">Login here</a></p>
+            <p><a href="index.html">⬅ Back to Home</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 FarmConnect | Built with ❤️ by Ved</p>
+    </footer>
+
+    <script>
+        // Show extra fields if role = worker
+        document.getElementById("role").addEventListener("change", function() {
+            const workerFields = document.getElementById("worker-fields");
+            if (this.value === "worker") {
+                workerFields.style.display = "block";
+            } else {
+                workerFields.style.display = "none";
+            }
+        });
+    </script>
+</body>
+</html>
